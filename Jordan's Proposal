@@ -1,0 +1,21 @@
+# healthyme-frontend
+
+					Project Proposal
+
+
+
+Team Name: Fantastic4Developers
+
+Application Name: GOAT_StatusSports.com
+
+Technology Used: Front End- Angular, Back End- Node + Express, Database- NoSql
+
+Initial Features: Users will be able to create, read, update, and delete blog posts for the users that want to discuss sports in a similar fashion to reddit. They will be able to view articles from various sports authorities for the users that just want to read about current sports talk. Users will have the ability to view stats and visit highlights as well for the users that are interested in analytics and data.
+
+Source control technology: GitHub
+
+Deployment: Amazon Web Services.
+
+This project will meet the minimal project requirements by using a front end framework, back end framework, and database. It will also be style with CSS by using bootstrap or flexbox. The project will also be responsive and developed for mobile use.
+
+After the minimum requirements are met, then there may be a couple of stretch goals added to the project.
