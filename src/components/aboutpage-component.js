@@ -1,3 +1,5 @@
+
+
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -28,7 +30,16 @@ export default class AboutPage extends Component {
                 <br></br>
                 These three tenets are the foundation of HealthyMeWe: Respect, Positivity, and Growth
                 </p>
+
+                <div id='teamPhotos'>
+                    <img src='C:\Users\IanDi\Pictures\Image_Profile-JGP'/>
+                    <img src='C:\Users\IanDi\Pictures\Image_Profile-Jason Walker'/>
+                    <img src='C:\Users\IanDi\Pictures\Image_Profile-Chris Jeffers'/>
+                    <img src='C:\Users\IanDi\Pictures\Profile Photo Headshot Blk Wht-Ian.jpg'/>
+                </div>
+
             </div>
         )
     }
 }
+
