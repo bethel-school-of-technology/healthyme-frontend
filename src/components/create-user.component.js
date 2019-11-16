@@ -1,3 +1,5 @@
+
+
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -68,8 +70,12 @@ export default class CreateUser extends Component {
     render() {
         return (
             <div>
+
                 <h3>Create New User</h3>
+                <br></br>
+
                 <form onSubmit={this.onSubmit}>
+
                     <div className='form-group'>
                         <label>Username: </label>
                         <input type="text"
@@ -78,6 +84,8 @@ export default class CreateUser extends Component {
                             value={this.state.username}
                             onChange={this.onChangeUsername}
                             />
+                        <br></br>
+
                         <label>Name: </label>
                         <input type="text"
                             required
@@ -85,6 +93,8 @@ export default class CreateUser extends Component {
                             value={this.state.name}
                             onChange={this.onChangeName}
                             />
+                        <br></br>
+
                         <label>Email: </label>
                         <input type="email"
                             required
@@ -92,16 +102,20 @@ export default class CreateUser extends Component {
                             value={this.state.email}
                             onChange={this.onChangeEmail}
                             />
-                       <label>Password: </label>
-                       <input type="password"
+                        <br></br>
+
+                        <label>Password: </label>
+                        <input type="password"
                             required
                             className="form-control"
                             value={this.state.password}
                             onChange={this.onChangePassword}
                             />
+                        <br></br>
+
                     </div>
                     <div className="form-group">
-                        <input type="submit" value="Create User" className="btn btn-primary" />
+                        <input type="submit" value="Submit" className="btn btn-primary" />
                     </div>
                 </form>
             </div>

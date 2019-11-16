@@ -31,6 +31,7 @@ export default class AboutPage extends Component {
                 These three tenets are the foundation of HealthyMeWe: Respect, Positivity, and Growth
                 </p>
 
+                {/* Do I need to make these images uploaded to a website or web App to make them a URL link? */}
                 <div id='teamPhotos'>
                     <img src='C:\Users\IanDi\Pictures\Image_Profile-JGP'/>
                     <img src='C:\Users\IanDi\Pictures\Image_Profile-Jason Walker'/>

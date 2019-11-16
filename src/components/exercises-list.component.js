@@ -1,3 +1,5 @@
+
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -47,25 +49,26 @@ export default class ExercisesList extends Component {
             return <Exercise exercise={currentexercise} deleteExercise={this.deleteExercise} key={currentexercise._id}/>;
         })
     }
+
     render() {
         return (
-        <div>
-            <h3>Logged Exercises</h3>
-            <table className="table">
-                <thead className="thead-light">
-                    <tr>
-                        <th>Username</th>
-                        <th>Description</th>
-                        <th>Duration</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    { this.exerciseList() }
-                </tbody>
-            </table>
-        </div>
+            <div>
+                <h3>Exercise Log</h3>
+                <table className="table">
+                    <thead className="thead-light">
+                        <tr>
+                            <th>Username</th>
+                            <th>Description</th>
+                            <th>Duration</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        { this.exerciseList() }
+                    </tbody>
+                </table>
+            </div>
         )
     }
 }
