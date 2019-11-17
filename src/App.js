@@ -8,6 +8,7 @@ import NavBar from "./pages/navbar";
 import HomePage from "./pages/home";
 import AboutPage from "./pages/about";
 import CreateUser from "./pages/createUser";
+import Login from "./pages/login";
 import ExerciseEntry from "./pages/exerciseEntry";
 import ExerciseLog from "./pages/exerciseLog";
 import EditExercise from "./pages/editExercise";
@@ -22,6 +23,7 @@ function App() {
         <Route path="/home" component={HomePage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/user" component={CreateUser} />
+        <Route path="/login" component={Login} />
         <Route path="/entry" component={ExerciseEntry} />
         <Route path="/log" exact component={ExerciseLog} />
         <Route path="/edit/:id" component={EditExercise} />
