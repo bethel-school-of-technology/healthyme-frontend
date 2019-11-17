@@ -6,7 +6,7 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
 
-export default class CreateExercises extends Component {
+export default class ExerciseEntry extends Component {
     constructor(props) {
         super(props);
 
@@ -82,7 +82,7 @@ export default class CreateExercises extends Component {
     render() {
         return (
             <div>
-                <h3>Create New Exercise Log</h3>
+                <h3>Enter New Exercise Log</h3>
                 <br></br>
 
                 <form onSubmit={this.onSubmit}>

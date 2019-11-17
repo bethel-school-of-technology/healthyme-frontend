@@ -32,11 +32,12 @@ export default class AboutPage extends Component {
                 </p>
 
                 {/* Do I need to make these images uploaded to a website or web App to make them a URL link? */}
+                
                 <div id='teamPhotos'>
-                    <img src='C:\Users\IanDi\Pictures\Image_Profile-JGP'/>
-                    <img src='C:\Users\IanDi\Pictures\Image_Profile-Jason Walker'/>
-                    <img src='C:\Users\IanDi\Pictures\Image_Profile-Chris Jeffers'/>
-                    <img src='C:\Users\IanDi\Pictures\Profile Photo Headshot Blk Wht-Ian.jpg'/>
+                    <img src='C:\Users\IanDi\Pictures\Image_Profile-JGP.jpg' alt='' />
+                    <img src='C:\Users\IanDi\Pictures\Image_Profile-Jason Walker.jpg' alt='' />
+                    <img src='C:\Users\IanDi\Pictures\Image_Profile-Chris Jeffers.jpg' alt='' />
+                    <img src='C:\Users\IanDi\Pictures\Profile Photo Headshot Blk Wht-Ian.jpg' alt='' />
                 </div>
 
             </div>
