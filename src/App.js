@@ -22,10 +22,10 @@ function App() {
         <br/>
         <Route path="/home" component={HomePage} />
         <Route path="/about" component={AboutPage} />
-        <Route path="/user" component={CreateUser} />
+        <Route path="/createUser" component={CreateUser} />
         <Route path="/login" component={Login} />
         <Route path="/entry" component={ExerciseEntry} />
-        <Route path="/log" exact component={ExerciseLog} />
+        <Route path="/exerciseLog" component={ExerciseLog} />
         <Route path="/edit/:id" component={EditExercise} />
       </div> 
     </Router>

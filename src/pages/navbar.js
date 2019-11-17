@@ -24,7 +24,7 @@ export default class Navbar extends Component {
                         </li>
 
                         <li className="navbar-item">
-                            <Link to="/user" className="nav-link">Create User</Link>
+                            <Link to="/createUser" className="nav-link">Create User</Link>
                         </li>
 
                         <li className="navbar-item">
@@ -36,7 +36,7 @@ export default class Navbar extends Component {
                         </li>
 
                         <li className="navbar-item">
-                            <Link to="/log" className="nav-link">Exercise Log</Link>
+                            <Link to="/exerciseLog" className="nav-link">Exercise Log</Link>
                         </li>
 
                     </ul>
