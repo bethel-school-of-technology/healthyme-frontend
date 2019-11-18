@@ -29,7 +29,7 @@ export default class EditExercises extends Component {
         axios.get('http://localhost:5000/exercises/'+this.props.match.params.id)
         .then(response => {
             this.setState({
-                username:response.data.username,
+                username: response.data.username,
                 description: response.data.description,
                 duration: response.data.duration,
                 date: new Date(response.data.date)
@@ -82,7 +82,7 @@ export default class EditExercises extends Component {
 
         console.log(exercise);
 
-        axios.post('http://localhost:5000/exercises/update'+this.props.match.params.id, exercise)
+        axios.put('http://localhost:5000/exercises/update'+this.props.match.params.id, exercise)
           .then(res => console.log(res.data));
 
         window.location = '/';
@@ -92,9 +92,10 @@ export default class EditExercises extends Component {
         return (
         <div>
             <h3>Edit Exercise Log</h3>
+
             <form onSubmit={this.onSubmit}>
                 <div className="from-group">
-                    <label>Username: </label>
+                    <label>Username:</label>
                     <select ref="userInput"
                     required
                     className="form-control"
@@ -110,8 +111,9 @@ export default class EditExercises extends Component {
                         }
                     </select>
                 </div>
+
                 <div className="from-group">
-                    <label>Description: </label>
+                    <label>Description:</label>
                     <input type="text"
                         required
                         className="form-control"
@@ -119,6 +121,7 @@ export default class EditExercises extends Component {
                         onChange={this.onChangeDescription}
                         />
                 </div>
+
                 <div className="from-group">
                     <label>Duration (Minutes): </label>
                     <input 
@@ -128,6 +131,7 @@ export default class EditExercises extends Component {
                         onChange={this.onChangeDuration}
                         />
                 </div>
+                
                 <div className="from-group">
                     <label>Date: </label>
                     <div>
