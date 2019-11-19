@@ -76,7 +76,7 @@ export default class ExerciseEntry extends Component {
         axios.post('http://localhost:5000/exercises/add', exercise)
           .then(res => console.log(res.data));
 
-        window.location = '/';
+        window.location = '/exerciseEntry'; 
     }
 
     render() {
@@ -97,8 +97,7 @@ export default class ExerciseEntry extends Component {
                                 this.state.users.map(function(user) {
                                     return <option
                                     key={user}
-                                    value={user}>
-                                          {user}
+                                    value={user}>{user}
                                     </option>;
                                 })
                             }
@@ -147,3 +146,4 @@ export default class ExerciseEntry extends Component {
         )
     }
 }
+

@@ -3,6 +3,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+// Need to add a require/validation and alert that the username must be at least three characters 
+
 
 export default class CreateUser extends Component {
     constructor(props) {
@@ -58,7 +60,11 @@ export default class CreateUser extends Component {
 
         console.log(user);
 
-     
+        axios.put('http://localhost:5000/users/add', user)
+        .then(res => console.log(res.data));
+
+        window.location = '/createUser';
+
         this.setState({
             username: '',
             name: '',
