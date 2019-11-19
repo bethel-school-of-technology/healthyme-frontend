@@ -24,7 +24,7 @@ function App() {
         <Route path="/about" component={AboutPage} />
         <Route path="/createUser" component={CreateUser} />
         <Route path="/login" component={Login} />
-        <Route path="/entry" component={ExerciseEntry} />
+        <Route path="/exerciseEntry" component={ExerciseEntry} />
         <Route path="/exerciseLog" component={ExerciseLog} />
         <Route path="/edit/:id" component={EditExercise} />
       </div> 
