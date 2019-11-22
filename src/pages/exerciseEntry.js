@@ -82,7 +82,10 @@ export default class ExerciseEntry extends Component {
     render() {
         return (
             <div>
-                <h3>Enter New Exercise Log</h3>
+                <h3>Enter New Exercise Log 
+                <br></br>
+                <br></br>  
+                (You MUST be Logged in to make and Entry, and you MUST create a User to Login!)</h3>
                 <br></br>
 
                 <form onSubmit={this.onSubmit}>

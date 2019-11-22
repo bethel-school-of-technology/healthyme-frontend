@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../images/Image from iOS.jpg';
 
 export default class HomePage extends Component {
 
@@ -12,6 +13,10 @@ export default class HomePage extends Component {
                 
                 <h1>Where your Health and our Health are One!</h1>
                 <br></br>
+
+                <div id='logo'>
+                    <img src={logo} />
+                </div>
 
                 <h2>Follow the Steps Below to Get Started</h2>
                 <br></br>
@@ -24,6 +29,7 @@ export default class HomePage extends Component {
 
                 <h3>Step 3: Do your exercises and enter them here: <Link to="/entry" className="nav-link">Exercise Entry</Link></h3>
             </div>
+
         )
     }    
 }   
