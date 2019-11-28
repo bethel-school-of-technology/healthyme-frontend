@@ -1,0 +1,382 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HealthyMeWe Tools Page</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+
+<body onload="show();">
+
+    <div>
+        <h2>Exercise Timer</h2>
+        <h4>Select type of exerecise below, then start the timer</h4>
+        <select name="Walking/Running" id="">
+            <option value="W">Walking</option>
+            <option value="R">Running</option>
+            <option value="C">Cardio</option>
+            <option value="R">Resistance</option>
+        </select>
+        <br>
+        <br>
+
+        <div>Time: <span id="time"></span></div>
+        <input type="button" value="Start" onclick="start();">
+        <input type="button" value="Stop" onclick="stop();">
+        <input type="button" value="Reset" onclick="reset()">
+
+        <script>
+            //	Simple example of using private variables
+            //
+            //	To start the stopwatch:
+            //		obj.start();
+            //
+            //	To get the duration in milliseconds without pausing / resuming:
+            //		var	x = obj.time();
+            //
+            //	To pause the stopwatch:
+            //		var	x = obj.stop();	// Result is duration in milliseconds
+            //
+            //	To resume a paused stopwatch
+            //		var	x = obj.start();	// Result is duration in milliseconds
+            //
+            //	To reset a paused stopwatch
+            //		obj.stop();
+            //
+            var clsStopwatch = function () {
+                // Private vars
+                var startAt = 0;	// Time of last start / resume. (0 if not running)
+                var lapTime = 0;	// Time on the clock when last stopped in milliseconds
+
+                var now = function () {
+                    return (new Date()).getTime();
+                };
+
+                // Public methods
+                // Start or resume
+                this.start = function () {
+                    startAt = startAt ? startAt : now();
+                };
+
+                // Stop or pause
+                this.stop = function () {
+                    // If running, update elapsed time otherwise keep it
+                    lapTime = startAt ? lapTime + now() - startAt : lapTime;
+                    startAt = 0; // Paused
+                };
+
+                // Reset
+                this.reset = function () {
+                    lapTime = startAt = 0;
+                };
+
+                // Duration
+                this.time = function () {
+                    return lapTime + (startAt ? now() - startAt : 0);
+                };
+            };
+
+            var x = new clsStopwatch();
+            var $time;
+            var clocktimer;
+
+            function pad(num, size) {
+                var s = "0000" + num;
+                return s.substr(s.length - size);
+            }
+
+            function formatTime(time) {
+                var h = m = s = ms = 0;
+                var newTime = '';
+
+                h = Math.floor(time / (60 * 60 * 1000));
+                time = time % (60 * 60 * 1000);
+                m = Math.floor(time / (60 * 1000));
+                time = time % (60 * 1000);
+                s = Math.floor(time / 1000);
+                ms = time % 1000;
+
+                newTime = pad(h, 2) + ':' + pad(m, 2) + ':' + pad(s, 2) + ':' + pad(ms, 3);
+                return newTime;
+            }
+
+            function show() {
+                $time = document.getElementById('time');
+                update();
+            }
+
+            function update() {
+                $time.innerHTML = formatTime(x.time());
+            }
+
+            function start() {
+                clocktimer = setInterval("update()", 1);
+                x.start();
+            }
+
+            function stop() {
+                x.stop();
+                clearInterval(clocktimer);
+            }
+
+            function reset() {
+                stop();
+                x.reset();
+                update();
+            }
+        </script>
+
+        <br>
+        <br>
+    </div>
+
+    <div>
+        <h2>Exercise Tracker</h2>
+
+        <h4>Check the box for each day of the week you completed your exercise</h4>
+
+        <input type="checkbox" id="Su" name="Sun" value="Sunday" />
+        <label for="sunday">Sunday</label>
+
+        <input type="checkbox" id="M" name="Mon" value="Monday" />
+        <label for="monday">Monday</label>
+
+        <input type="checkbox" id="Tu" name="Tues" value="Tuesday" />
+        <label for="tuesday">Tuesday</label>
+
+        <input type="checkbox" id="W" name="Wed" value="Wednesday" />
+        <label for="wednesday">Wednesday</label>
+
+        <input type="checkbox" id="Th" name="Thurs" value="Thursday" />
+        <label for="thursday">Thursday</label>
+
+        <input type="checkbox" id="F" name="Fri" value="Friday" />
+        <label for="friday">Friday</label>
+
+        <input type="checkbox" id="Sa" name="Sat" value="Saturday" />
+        <label for="saturday">Saturday</label>
+        <br>
+        <br>
+    </div>
+
+    <div>
+        <h2>Weight Loss Tracker</h2>
+
+        <h4>Select the number of pounds per day below</h4>
+
+        <table>
+            <tr>Sunday </tr>
+            <br>
+            <select name="Pounds Per Day" id="">
+                <option value="-10">-10</option>
+                <option value="-9">-9</option>
+                <option value="-8">-8</option>
+                <option value="-7">-7</option>
+                <option value="-6">-6</option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option selected value="Null"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br>
+            <br>
+
+            <tr>Monday </tr>
+            <br>
+            <select name="Pounds Per Day" id="">
+                <option value="-10">-10</option>
+                <option value="-9">-9</option>
+                <option value="-8">-8</option>
+                <option value="-7">-7</option>
+                <option value="-6">-6</option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option selected value="Null"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br>
+            <br>
+
+            <tr>Tuesday </tr>
+            <br>
+            <select name="Pounds Per Day" id="">
+                <option value="-10">-10</option>
+                <option value="-9">-9</option>
+                <option value="-8">-8</option>
+                <option value="-7">-7</option>
+                <option value="-6">-6</option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option selected value="Null"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br>
+            <br>
+
+            <tr>Wednesday </tr>
+            <br>
+            <select name="Pounds Per Day" id="">
+                <option value="-10">-10</option>
+                <option value="-9">-9</option>
+                <option value="-8">-8</option>
+                <option value="-7">-7</option>
+                <option value="-6">-6</option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option selected value="Null"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br>
+            <br>
+
+            <tr>Thursday </tr>
+            <br>
+            <select name="Pounds Per Day" id="">
+                <option value="-10">-10</option>
+                <option value="-9">-9</option>
+                <option value="-8">-8</option>
+                <option value="-7">-7</option>
+                <option value="-6">-6</option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option selected value="Null"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br>
+            <br>
+
+            <tr>Friday </tr>
+            <br>
+            <select name="Pounds Per Day" id="">
+                <option value="-10">-10</option>
+                <option value="-9">-9</option>
+                <option value="-8">-8</option>
+                <option value="-7">-7</option>
+                <option value="-6">-6</option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option selected value="Null"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br>
+            <br>
+
+            <tr>Saturday </tr>
+            <br>
+            <select name="Pounds Per Day" id="">
+                <option value="-10">-10</option>
+                <option value="-9">-9</option>
+                <option value="-8">-8</option>
+                <option value="-7">-7</option>
+                <option value="-6">-6</option>
+                <option value="-5">-5</option>
+                <option value="-4">-4</option>
+                <option value="-3">-3</option>
+                <option value="-2">-2</option>
+                <option value="-1">-1</option>
+                <option value="0">0</option>
+                <option selected value="Null"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+            <br>
+            <br>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>

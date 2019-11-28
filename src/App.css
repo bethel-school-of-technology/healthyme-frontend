@@ -1,0 +1,133 @@
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+#logo {
+  margin-left: 300px;
+  margin-bottom: 300px;
+}
+
+.Timers {
+  display: flex;
+  justify-content: center;
+  color: #d7157a;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .Timers {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .Stopwatch {
+    margin-bottom: 40px;
+  }
+}
+
+.Countdown,
+.Stopwatch {
+  margin-left: 30px;
+  margin-right: 30px;
+  border: 2px solid #d7157a;
+  border-radius: 4px;
+  padding: 20px;
+  width: 400px;
+  background-color: #FFBF00;
+  box-shadow: 0 3px 6px #0080ff;
+}
+
+.Countdown {
+  padding-top: 10px;
+}
+
+.Countdown-header,
+.Stopwatch-header {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+button {
+  background-color: #d7157a;
+  border: solid 1px transparent;
+  border-radius: 4px;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0080ff;
+}
+
+.Stopwatch button {
+  padding: 12px 32px;
+  font-size: 20px;
+}
+
+.Stopwatch-display {
+  padding: 40px 0;
+  font-size: 48px;
+  color: #0080ff;
+}
+
+.Stopwatch-text {
+  color: #0080ff;
+}
+
+.Countdown-display {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  color: #0080ff;
+}
+
+.Countdown-display button {
+  margin: 0 15px;
+  border: solid 1px transparent;
+  border-radius: 2px;
+  padding: 4px 16px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.Countdown-display button:hover {
+  background-color: #0080ff;
+}
+
+.Countdown-label {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: #0080ff;
+}
+
+.Countdown-time {
+  font-size: 36px;
+  margin: 5px 0;
+  color: #0080ff;
+}
