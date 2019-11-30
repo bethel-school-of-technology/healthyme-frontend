@@ -10,7 +10,7 @@ export default class Tools extends Component {
   render() {
     return (
       <div className="Tools">
-        <div className="">Exercise Tools</div>
+        {/* <div className="">Exercise Tools</div> */}
         <div className="Timers">
           <Stopwatch />
           <Countdown />
