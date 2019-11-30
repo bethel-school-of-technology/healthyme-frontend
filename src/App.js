@@ -23,7 +23,7 @@ function App() {
         <Route path="/home" component={HomePage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/createUser" component={CreateUser} />
-        <Route path="/login" component={Login} />
+        {/* <Route path="/login" component={Login} /> */}
         <Route path="/exerciseEntry" component={ExerciseEntry} />
         <Route path="/exerciseLog" component={ExerciseLog} />
         <Route path="/edit/:id" component={EditExercise} />
