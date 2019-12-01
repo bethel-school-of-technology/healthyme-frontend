@@ -85,7 +85,7 @@ export default class EditExercises extends Component {
         axios.put('https://salty-chamber-93253.herokuapp.com/exercises/update/' + this.props.match.params.id, exercise)
             .then(res => console.log(res.data));
 
-        window.location = '/';
+        window.location = '/exerciseLog';
     }
 
     render() {

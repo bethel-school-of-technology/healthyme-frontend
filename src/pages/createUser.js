@@ -66,6 +66,8 @@ export default class CreateUser extends Component {
       email: "",
       password: ""
     });
+
+    window.location = "/exerciseEntry";
   }
 
   render() {
@@ -106,14 +108,14 @@ export default class CreateUser extends Component {
             />
             <br></br>
 
-            <label>Password: </label>
+            {/* <label>Password: </label>
             <input
               type="password"
               required
               className="form-control"
               value={this.state.password}
               onChange={this.onChangePassword}
-            />
+            /> */}
             <br></br>
           </div>
           <div className="form-group">

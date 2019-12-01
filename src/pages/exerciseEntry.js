@@ -77,7 +77,7 @@ export default class ExerciseEntry extends Component {
             .put("https://salty-chamber-93253.herokuapp.com/exercises/add", exercise)
             .then(res => console.log(res.data));
 
-        window.location = '/';
+        window.location = '/exerciseLog';
     }
 
     render() {

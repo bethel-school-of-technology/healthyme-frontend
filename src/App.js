@@ -28,6 +28,7 @@ function App() {
         <Route path="/exerciseLog" component={ExerciseLog} />
         <Route path="/edit/:id" component={EditExercise} />
         <Route path="/exerciseTools" component={ExerciseTools} />
+        {/* <footer id="main-footer">Copyright &copy; 2019</footer> */}
       </div>
     </Router>
   );
