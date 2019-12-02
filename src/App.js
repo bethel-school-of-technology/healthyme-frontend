@@ -20,7 +20,7 @@ function App() {
       <div className="container">
         <NavBar />
         <br />
-        <Route path="/home" component={HomePage} />
+        <Route path="/" exact component={HomePage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/createUser" component={CreateUser} />
         {/* <Route path="/login" component={Login} /> */}

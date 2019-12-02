@@ -7,7 +7,7 @@ export default class Navbar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
+            <nav className="navbar navbar-warning bg-warning navbar-expand-lg">
 
                 <h2 className="navbar-brand">HealthyMeWe</h2>
 
@@ -16,7 +16,7 @@ export default class Navbar extends Component {
                     <ul className="navbar-nav mr-auto">
 
                         <li className="navbar-item">
-                            <Link to="/home" className="nav-link">Home</Link>
+                            <Link to="/" className="nav-link">Home</Link>
                         </li>
 
                         <li className="navbar-item">
